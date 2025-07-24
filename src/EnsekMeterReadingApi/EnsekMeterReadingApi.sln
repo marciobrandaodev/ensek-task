@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeterReadingApi.Api", "EnsekMeterReadingApi.Api\EnsekMeterReadingApi.Api.csproj", "{48B3268C-48DD-44B9-A340-E884E5125BA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeterReadingApi.Core", "EnsekMeterReadingApi.Core\EnsekMeterReadingApi.Core.csproj", "{81F8B7CA-EFE0-4843-A2DB-285F1B3CED68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeterReadingApi.Infrastructure", "EnsekMeterReadingApi.Infrastructure\EnsekMeterReadingApi.Infrastructure.csproj", "{72E20DF7-6DE1-4F21-A5B2-E9A3B82C6B9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeterReadingApi.Tests", "EnsekMeterReadingApi.Tests\EnsekMeterReadingApi.Tests.csproj", "{2AB9391B-2FCE-4530-87C9-FEB3DE2C6F5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48B3268C-48DD-44B9-A340-E884E5125BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B3268C-48DD-44B9-A340-E884E5125BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B3268C-48DD-44B9-A340-E884E5125BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B3268C-48DD-44B9-A340-E884E5125BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81F8B7CA-EFE0-4843-A2DB-285F1B3CED68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81F8B7CA-EFE0-4843-A2DB-285F1B3CED68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81F8B7CA-EFE0-4843-A2DB-285F1B3CED68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81F8B7CA-EFE0-4843-A2DB-285F1B3CED68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72E20DF7-6DE1-4F21-A5B2-E9A3B82C6B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E20DF7-6DE1-4F21-A5B2-E9A3B82C6B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E20DF7-6DE1-4F21-A5B2-E9A3B82C6B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E20DF7-6DE1-4F21-A5B2-E9A3B82C6B9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB9391B-2FCE-4530-87C9-FEB3DE2C6F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB9391B-2FCE-4530-87C9-FEB3DE2C6F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB9391B-2FCE-4530-87C9-FEB3DE2C6F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB9391B-2FCE-4530-87C9-FEB3DE2C6F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC35B4A0-CA92-4AAB-9B95-8CB5CC222700}
+	EndGlobalSection
+EndGlobal
