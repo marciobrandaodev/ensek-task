@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeterReadingApi.Api", "EnsekMeterReadingApi.Api\EnsekMeterReadingApi.Api.csproj", "{56C70151-B62D-4709-8DFE-BF872F90FEC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeterReadingApi.Core", "EnsekMeterReadingApi.Core\EnsekMeterReadingApi.Core.csproj", "{08AB709E-8DF5-4833-BB6B-984610819A38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeterReadingApi.Infrastructure", "EnsekMeterReadingApi.Infrastructure\EnsekMeterReadingApi.Infrastructure.csproj", "{AEA696D4-F9E6-46CB-B7D7-848DC4E79D17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeterReadingApi.Tests", "Tests\EnsekMeterReadingApi.Tests\EnsekMeterReadingApi.Tests.csproj", "{F79E2076-550B-48BF-AF14-86FAF31E7425}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56C70151-B62D-4709-8DFE-BF872F90FEC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C70151-B62D-4709-8DFE-BF872F90FEC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C70151-B62D-4709-8DFE-BF872F90FEC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C70151-B62D-4709-8DFE-BF872F90FEC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08AB709E-8DF5-4833-BB6B-984610819A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08AB709E-8DF5-4833-BB6B-984610819A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08AB709E-8DF5-4833-BB6B-984610819A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08AB709E-8DF5-4833-BB6B-984610819A38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEA696D4-F9E6-46CB-B7D7-848DC4E79D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA696D4-F9E6-46CB-B7D7-848DC4E79D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA696D4-F9E6-46CB-B7D7-848DC4E79D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA696D4-F9E6-46CB-B7D7-848DC4E79D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F79E2076-550B-48BF-AF14-86FAF31E7425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F79E2076-550B-48BF-AF14-86FAF31E7425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F79E2076-550B-48BF-AF14-86FAF31E7425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F79E2076-550B-48BF-AF14-86FAF31E7425}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2511D9D-D01C-4D0F-AEE7-9E4A10753261}
+	EndGlobalSection
+EndGlobal
