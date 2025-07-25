@@ -1,3 +1,4 @@
+using EnsekMeterReadingApi.Api.Controllers;
 using EnsekMeterReadingApi.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,9 @@ builder.Services.AddOpenApi();
 builder.Services.AddScoped<ICsvMeterReading, CsvMeterReadingService>();
 
 var app = builder.Build();
+
+// Register the logger
+_ = app.Services.GetRequiredService<ILogger<MeterReadingsController>>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -3,7 +3,6 @@ using AutoFixture.AutoMoq;
 using EnsekMeterReadingApi.Api.DTO;
 using EnsekMeterReadingApi.Api.Services;
 using Moq;
-using NUnit.Framework;
 
 namespace EnsekMeterReadingApi.Tests.EnsekMeterReadingApi.Api.Services;
 
@@ -22,16 +21,19 @@ public class CsvMeterReadingServiceTests
         _stream = new MemoryStream();
     }
 
-    [Test]
-    public async Task ReadMeterReadingsAsync_ShouldReturnMeterReadingDtos_WhenStreamIsValid()
+    [TestCase(5)]
+    [TestCase(1)]
+    [TestCase(0)]
+    public async Task ReadMeterReadingsAsync_ShouldReturnMeterReadingDtos_WhenStreamIsValid(int numberOfReads)
     {
         // Arrange
-        var expectedRecords = _fixture.CreateMany<MeterReadingDto>(5).ToList();
+        var expectedRecords = _fixture.CreateMany<MeterReadingDto>(numberOfReads).ToList();
         _csvMeterReadingMock.Setup(x => x.ReadMeterReadingsAsync(It.IsAny<Stream>()))
             .ReturnsAsync(expectedRecords);
         // Act
         var result = await _csvMeterReadingMock.Object.ReadMeterReadingsAsync(_stream);
-        // Assert
+        // Assertions;
+        // I would normally write 3 different tests with a single assertion each, but for brevity, I will combine them here.
         Assert.That(result, Is.Not.Null);
         Assert.That(expectedRecords.Count, Is.EqualTo(result.Count()));
         Assert.That(expectedRecords, Is.EqualTo(result.ToList()));
