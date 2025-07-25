@@ -13,9 +13,9 @@ public class EnsekDbContext : DbContext
         : base(options)
     {
     }
+    public virtual DbSet<MeterReading> MeterReadings { get; set; }
+    public virtual DbSet<Account> Accounts { get; set; }
 
-    public DbSet<Account> Accounts { get; set; } = null!;
-    public DbSet<MeterReading> MeterReadings { get; set; } = null!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

@@ -27,7 +27,7 @@ public class CsvMeterReadingServiceTests
     public async Task ReadMeterReadingsAsync_ShouldReturnMeterReadingDtos_WhenStreamIsValid(int numberOfReads)
     {
         // Arrange
-        var expectedRecords = _fixture.CreateMany<MeterReadingDto>(numberOfReads).ToList();
+        var expectedRecords = _fixture.CreateMany<(MeterReadingDto reading, string error)>(numberOfReads).ToList();
         _csvMeterReadingMock.Setup(x => x.ReadMeterReadingsAsync(It.IsAny<Stream>()))
             .ReturnsAsync(expectedRecords);
         // Act
@@ -50,4 +50,5 @@ public class CsvMeterReadingServiceTests
         Assert.ThrowsAsync<InvalidOperationException>(async () => 
             await _csvMeterReadingMock.Object.ReadMeterReadingsAsync(_stream));
     }
+
 }

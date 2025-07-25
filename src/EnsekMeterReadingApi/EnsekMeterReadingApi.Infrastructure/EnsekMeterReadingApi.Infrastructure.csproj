@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="data\Test_Accounts.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="data\Test_Accounts.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.7">
       <PrivateAssets>all</PrivateAssets>
@@ -21,6 +31,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EnsekMeterReadingApi.Core\EnsekMeterReadingApi.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="migrations\" />
   </ItemGroup>
 
 </Project>

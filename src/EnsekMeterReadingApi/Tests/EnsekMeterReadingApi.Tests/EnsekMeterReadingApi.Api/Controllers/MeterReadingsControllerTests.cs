@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using EnsekMeterReadingApi.Api.DTO;
 using Microsoft.AspNetCore.Mvc;
+using EnsekMeterReadingApi.Infrastructure;
 
 namespace EnsekMeterReadingApi.Tests.EnsekMeterReadingApi.Api.Controllers;
 
@@ -16,6 +17,7 @@ public class MeterReadingsControllerTests
 {
     private IFixture _fixture;
     private Mock<ICsvMeterReading> _csvMeterReadingMock;
+    private EnsekDbContext _dbContext;
     private MeterReadingsController _controller;
 
     [SetUp]
@@ -23,8 +25,9 @@ public class MeterReadingsControllerTests
     {
         _fixture = new Fixture().Customize(new AutoMoqCustomization());
         _csvMeterReadingMock = _fixture.Freeze<Mock<ICsvMeterReading>>();
+        _dbContext = _fixture.Freeze<EnsekDbContext>();
         var logger = _fixture.Freeze<Mock<ILogger<MeterReadingsController>>>();
-        _controller = new MeterReadingsController(_csvMeterReadingMock.Object, logger.Object);
+        _controller = new MeterReadingsController(_csvMeterReadingMock.Object, logger.Object,_dbContext);
     }
 
     [TestCase(5)]
@@ -36,11 +39,11 @@ public class MeterReadingsControllerTests
         var fileMock = new Mock<IFormFile>();
         fileMock.Setup(f => f.FileName).Returns("valid.csv");
         fileMock.Setup(f => f.OpenReadStream()).Returns(new MemoryStream());
-        
-        var expectedRecords = _fixture.CreateMany<MeterReadingDto>(numberOfReadings).ToList();
+
+        var expectedRecords = _fixture.CreateMany<(MeterReadingDto reading, string error)>(numberOfReadings).ToList();
         _csvMeterReadingMock.Setup(x => x.ReadMeterReadingsAsync(It.IsAny<Stream>()))
             .ReturnsAsync(expectedRecords);
-        
+
         // Act
         var result = await _controller.MeterReadingUploads(fileMock.Object);
         
@@ -63,4 +66,12 @@ public class MeterReadingsControllerTests
         Assert.That(badRequestResult.Value, Is.EqualTo("CSV file required!"));
     }
 
+    [TearDown]
+    public void TearDown()
+    {
+        _fixture = null;
+        _csvMeterReadingMock = null;
+        _dbContext.Dispose();
+        _controller.Dispose();
+    }
 }
